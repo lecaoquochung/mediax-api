@@ -41,7 +41,31 @@ use Cake\Routing\Router;
  */
 Router::defaultRouteClass('DashedRoute');
 
+/*------------------------------------------------------------------------------------------------------------
+ * api route json
+ *
+ * @input		
+ * @output
+ * 
+ * @author		Le Hung <lecaoquochung@gmail.com>
+ * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @created		201512
+ -------------------------------------------------------------------------------------------------------------*/
+Router::extensions(['json', 'xml']);
+
 Router::scope('/', function ($routes) {
+/*------------------------------------------------------------------------------------------------------------
+ * api route Ranklogs
+ *
+ * @input		
+ * @output
+ * 
+ * @author		Le Hung <lecaoquochung@gmail.com>
+ * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @created		201512
+ -------------------------------------------------------------------------------------------------------------*/
+	$routes->resources('Ranklogs');
+	
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
