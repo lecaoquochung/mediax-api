@@ -11,6 +11,28 @@ use App\Controller\AppController;
 class RanklogsController extends AppController
 {
 
+/*------------------------------------------------------------------------------------------------------------
+ * RanklogsController API
+ *
+ * @input		
+ * @output
+ * 
+ * @author		Le Hung <lecaoquochung@gmail.com>
+ * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @created		201512
+ -------------------------------------------------------------------------------------------------------------*/
+	public $paginate = [
+        'page' => 1,
+        'limit' => 10,
+        'maxLimit' => 100,
+        'fields' => [
+            'id', 'keyword', 'url'
+        ],
+        'sortWhitelist' => [
+            'id', 'keyword', 'url'
+        ]
+    ];
+ 
     /**
      * Index method
      *
