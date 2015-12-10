@@ -51,7 +51,12 @@ Router::defaultRouteClass('DashedRoute');
  * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
  * @created		201512
  -------------------------------------------------------------------------------------------------------------*/
-Router::extensions(['json', 'xml']);
+// Router::extensions(['json', 'xml']); // test api no route
+
+Router::prefix('api', function ($routes) {
+    $routes->extensions(['json', 'xml']);
+    $routes->resources('Ranklogs');
+});
 
 Router::scope('/', function ($routes) {
 /*------------------------------------------------------------------------------------------------------------
@@ -64,7 +69,7 @@ Router::scope('/', function ($routes) {
  * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
  * @created		201512
  -------------------------------------------------------------------------------------------------------------*/
-	$routes->resources('Ranklogs');
+	// $routes->resources('Ranklogs'); // test api no route
 	
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

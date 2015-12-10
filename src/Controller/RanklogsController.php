@@ -21,17 +21,17 @@ class RanklogsController extends AppController
  * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
  * @created		201512
  -------------------------------------------------------------------------------------------------------------*/
-	public $paginate = [
-        'page' => 1,
-        'limit' => 10,
-        'maxLimit' => 100,
-        'fields' => [
-            'id', 'keyword', 'url'
-        ],
-        'sortWhitelist' => [
-            'id', 'keyword', 'url'
-        ]
-    ];
+	// public $paginate = [
+        // 'page' => 1,
+        // 'limit' => 10,
+        // 'maxLimit' => 100,
+        // 'fields' => [
+            // 'id', 'keyword', 'url'
+        // ],
+        // 'sortWhitelist' => [
+            // 'id', 'keyword', 'url'
+        // ]
+    // ];
  
     /**
      * Index method
