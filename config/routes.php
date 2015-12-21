@@ -56,9 +56,9 @@ Router::defaultRouteClass('DashedRoute');
 Router::prefix('api', function ($routes) {
     $routes->extensions(['json', 'xml']);
     $routes->resources('Ranklogs');
-	$routes->resources('Users');
+    $routes->resources('Users');
     Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
-    $routes->fallbacks('InflectedRoute');
+    $routes->fallbacks('DashedRoute');
 });
 
 Router::scope('/', function ($routes) {

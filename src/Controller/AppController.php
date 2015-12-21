@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -25,36 +27,37 @@ use Cake\Event\Event;
  *
  * @link http://book.cakephp.org/3.0/en/controllers.html#the-app-controller
  */
-class AppController extends Controller
-{
-/*------------------------------------------------------------------------------------------------------------
- * AppController API Test
- *
- * @input		
- * @output
- * 
- * @author		Le Hung <lecaoquochung@gmail.com>
- * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
- * @created		201512
- -------------------------------------------------------------------------------------------------------------*/
-	// use \Crud\Controller\ControllerTrait;
+class AppController extends Controller {
+
+    use \Crud\Controller\ControllerTrait;
+    /* ------------------------------------------------------------------------------------------------------------
+     * AppController API Test
+     *
+     * @input		
+     * @output
+     * 
+     * @author		Le Hung <lecaoquochung@gmail.com>
+     * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
+     * @created		201512
+      ------------------------------------------------------------------------------------------------------------- */
+    // use \Crud\Controller\ControllerTrait;
 // 
     // public $components = [
-        // 'RequestHandler',
-        // 'Crud.Crud' => [
-            // 'actions' => [
-                // 'Crud.Index',
-                // 'Crud.View',
-                // 'Crud.Add',
-                // 'Crud.Edit',
-                // 'Crud.Delete'
-            // ],
-            // 'listeners' => [
-                // 'Crud.Api',
-                // 'Crud.ApiPagination',
-                // 'Crud.ApiQueryLog'
-            // ]
-        // ]
+    // 'RequestHandler',
+    // 'Crud.Crud' => [
+    // 'actions' => [
+    // 'Crud.Index',
+    // 'Crud.View',
+    // 'Crud.Add',
+    // 'Crud.Edit',
+    // 'Crud.Delete'
+    // ],
+    // 'listeners' => [
+    // 'Crud.Api',
+    // 'Crud.ApiPagination',
+    // 'Crud.ApiQueryLog'
+    // ]
+    // ]
     // ];
 
     /**
@@ -66,12 +69,26 @@ class AppController extends Controller
      *
      * @return void
      */
-    public function initialize()
-    {
+    public function initialize() {
         parent::initialize();
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth');
+        $this->loadComponent('Crud.Crud', [
+            'actions' => [
+                'Crud.Index',
+                'Crud.View',
+                'Crud.Add',
+                'Crud.Edit',
+                'Crud.Delete'
+            ],
+            'listeners' => [
+                'Crud.Api',
+                'Crud.ApiPagination',
+                'Crud.ApiQueryLog'
+            ]
+        ]);
     }
 
     /**
@@ -80,12 +97,12 @@ class AppController extends Controller
      * @param \Cake\Event\Event $event The beforeRender event.
      * @return void
      */
-    public function beforeRender(Event $event)
-    {
+    public function beforeRender(Event $event) {
         if (!array_key_exists('_serialize', $this->viewVars) &&
-            in_array($this->response->type(), ['application/json', 'application/xml'])
+                in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
             $this->set('_serialize', true);
         }
     }
+
 }
