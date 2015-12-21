@@ -202,6 +202,5 @@ DispatcherFactory::add('ControllerFactory');
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
 
-Plugin::load('Crud');
-
-Plugin::load('ADmad/JwtAuth');
+// Plugin::load('Crud');
+// Plugin::load('ADmad/JwtAuth');
