@@ -2,12 +2,12 @@
 /*------------------------------------------------------------------------------------------------------------
  * api
  *
- * @input		
+ * @input       
  * @output
  * 
- * @author		Le Hung <lecaoquochung@gmail.com>
- * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
- * @created		201512
+ * @author      Le Hung <lecaoquochung@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @created     201512
  -------------------------------------------------------------------------------------------------------------*/
 
 namespace App\Controller\Api;
@@ -36,8 +36,11 @@ class AppController extends Controller
             ]
         ]
     ];
-	
-	public function initialize()
+    
+    /**
+     * @return void
+     */
+    public function initialize()
     {
         $this->loadComponent('Auth', [
             'storage' => 'Memory',

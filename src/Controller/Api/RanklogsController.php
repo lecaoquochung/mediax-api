@@ -2,12 +2,12 @@
 /*------------------------------------------------------------------------------------------------------------
  * Ranklogs API
  *
- * @input		
+ * @input       
  * @output
  * 
- * @author		Le Hung <lecaoquochung@gmail.com>
- * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
- * @created		201512
+ * @author      Le Hung <lecaoquochung@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php The MIT License
+ * @created     201512
  -------------------------------------------------------------------------------------------------------------*/
 
 namespace App\Controller\Api;
