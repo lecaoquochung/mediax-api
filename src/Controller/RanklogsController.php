@@ -66,7 +66,7 @@ class RanklogsController extends AppController
     /**
      * Add method
      *
-     * @return void Redirects on successful add, renders view otherwise.
+     * @return Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
@@ -90,7 +90,7 @@ class RanklogsController extends AppController
      * Edit method
      *
      * @param string|null $id Ranklog id.
-     * @return void Redirects on successful edit, renders view otherwise.
+     * @return Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)

@@ -9,7 +9,9 @@ use Firebase\JWT\JWT;
 
 class UsersController extends AppController
 {
-
+    /**
+     * @return void
+     */
     public function initialize()
     {
         parent::initialize();
@@ -18,6 +20,7 @@ class UsersController extends AppController
 
     /**
      * Create new user and return id plus JWT token
+     * @return token
      */
     public function add()
     {
@@ -28,7 +31,7 @@ class UsersController extends AppController
                     'token' => JWT::encode(
                         [
                             'sub' => $event->subject->entity->id,
-                            'exp' =>  time() + 604800
+                            'exp' => time() + 604800
                         ],
                         Security::salt()
                     )
@@ -41,6 +44,7 @@ class UsersController extends AppController
 
     /**
      * Return JWT token if posted user credentials pass FormAuthenticate
+     * @return void
      */
     public function token()
     {
@@ -55,7 +59,7 @@ class UsersController extends AppController
                 'token' => JWT::encode(
                     [
                         'sub' => $user['id'],
-                        'exp' =>  time() + 604800
+                        'exp' => time() + 604800
                     ],
                     Security::salt()
                 )
