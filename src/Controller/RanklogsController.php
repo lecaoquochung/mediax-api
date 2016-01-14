@@ -21,7 +21,7 @@ class RanklogsController extends AppController
  * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
  * @created		201512
  -------------------------------------------------------------------------------------------------------------*/
-	// public $paginate = [
+    // public $paginate = [
         // 'page' => 1,
         // 'limit' => 10,
         // 'maxLimit' => 100,

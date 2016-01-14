@@ -21,7 +21,7 @@ class UsersController extends AppController
      */
     public function add()
     {
-        $this->Crud->on('afterSave', function(Event $event) {
+        $this->Crud->on('afterSave', function (Event $event) {
             if ($event->subject->created) {
                 $this->set('data', [
                     'id' => $event->subject->entity->id,

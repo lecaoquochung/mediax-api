@@ -19,6 +19,8 @@ before_script:
   - sh -c "composer require 'cakephp/cakephp-codesniffer:dev-master'"
   - phpenv rehash
   - ./vendor/bin/phpcs --config-set installed_paths $(pwd)/vendor/cakephp/cakephp-codesniffer
+  - ./vendor/bin/phpcs -p --extensions=php --standard=CakePHP ./src
+  - ./vendor/bin/phpcbf -p --extensions=php --standard=CakePHP ./src
 
 script:
   - echo "Running test script"
@@ -26,6 +28,7 @@ script:
   - env
   - sh -c "vendor/bin/phpcs -p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests ./config ./webroot"
   - ./vendor/bin/phpcs -p --extensions=php --standard=CakePHP ./src
+  - ./vendor/bin/phpcbf -p --extensions=php --standard=CakePHP ./src
 
 notifications:
   email: lecaoquochung@gmail.com

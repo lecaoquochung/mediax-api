@@ -37,7 +37,7 @@ class AppController extends Controller
  * @license		http://www.opensource.org/licenses/mit-license.php The MIT License
  * @created		201512
  -------------------------------------------------------------------------------------------------------------*/
-	// use \Crud\Controller\ControllerTrait;
+    // use \Crud\Controller\ControllerTrait;
 // 
     // public $components = [
         // 'RequestHandler',
