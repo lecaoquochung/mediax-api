@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class Initial extends AbstractMigration
+class Mediax extends AbstractMigration
 {
     public function up()
     {
