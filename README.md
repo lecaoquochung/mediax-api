@@ -1,11 +1,7 @@
-# CakePHP Application Skeleton
+# Mediax API
 
-[![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/cakephp/app)
-[![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
-
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
-
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+[![Build Status](https://api.travis-ci.org/lecaoquochung/mediax-api.svg)](https://travis-ci.org/lecaoquochung/mediax-api)
+[![License](#)](#)
 
 ## Installation
 
@@ -17,10 +13,20 @@ If Composer is installed globally, run
 composer create-project --prefer-dist cakephp/app [app_name]
 ```
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
-
 ## Configuration
 
 Read and edit `config/app.php` and setup the 'Datasources' and any other
 configuration relevant for your application.
+
+## Migration
+
+1. New tables (/config/Migrations/[filename])
+CreateSeotrackings keyword_id:int type:tinyint name:string rank:string date:date created modified
+CreateLogSeotrackings seotracking_id:int rank:string date:date change:string detail:text created modified
+CreateSeotrackingCategories name:string description:text created modified
+
+2. Migrate to db
+bin/cake bake migrations migrate
+
+
+
