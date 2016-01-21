@@ -21,12 +21,11 @@ configuration relevant for your application.
 ## Migration
 
 1. New tables (/config/Migrations/[filename])
-CreateSeotrackings keyword_id:int type:tinyint name:string rank:string date:date created modified
-CreateLogSeotrackings seotracking_id:int rank:string date:date change:string detail:text created modified
-CreateSeotrackingCategories name:string description:text created modified
+https://drive.google.com/drive/folders/0B1aEVF30LNbRMGNWdThENE8zUlU
+create_seotrackings keyword_id:int seotracking_category_id:int title:string description:text rank:string date:date created modified
+CreateLogSeotrackings seotracking_id:int title:string description:text rank:string date:date created modified
+CreateSeotrackingCategories name:string parent:int created modified
 
 2. Migrate to db
-bin/cake bake migrations migrate
-
-
-
+bin/cake bake migration [params]
+bin/cake migrations migrate
